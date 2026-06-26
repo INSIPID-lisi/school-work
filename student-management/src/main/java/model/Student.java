@@ -3,6 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 学生实体类
+ * 包含学生基本信息（学号、姓名）及课程成绩列表
+ */
 public class Student {
 
     private String name;
@@ -48,6 +52,10 @@ public class Student {
         this.courseList = courseList;
     }
 
+    /**
+     * 计算所有课程总分
+     * @return 总分
+     */
     public double getTotalScore() {
         double total = 0;
         for (int i = 0; i < courseList.size(); i++) {
@@ -56,6 +64,10 @@ public class Student {
         return total;
     }
 
+    /**
+     * 计算各科平均分
+     * @return 平均分（无成绩时返回 0）
+     */
     public double getAverageScore() {
         if (courseList.isEmpty()) return 0;
         return getTotalScore() / courseList.size();

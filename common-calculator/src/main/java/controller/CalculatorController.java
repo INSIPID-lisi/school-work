@@ -4,12 +4,18 @@ import model.BasicCalculatorModel;
 import model.AdvancedCalculatorModel;
 import java.util.Scanner;
 
+/**
+ * 计算器控制器
+ * 负责菜单显示、用户输入处理与流程控制，
+ * 委托计算逻辑给 BasicCalculatorModel 和 AdvancedCalculatorModel
+ */
 public class CalculatorController {
 
     private final BasicCalculatorModel basicModel = new BasicCalculatorModel();
     private final AdvancedCalculatorModel advancedModel = new AdvancedCalculatorModel();
     private final Scanner scanner = new Scanner(System.in);
 
+    /** 启动计算器主循环 */
     public void start() {
         while (true) {
             showMainMenu();
@@ -35,7 +41,10 @@ public class CalculatorController {
         System.out.println("=================================");
     }
 
-    // 六则运算菜单
+    /**
+     * 六则运算菜单
+     * 处理加、减、乘、除、取余、倒数的输入与校验
+     */
     private void basicMenu() {
         System.out.println("\n--- 六则运算 ---");
         System.out.println("1. 加法");
@@ -84,7 +93,10 @@ public class CalculatorController {
         }
     }
 
-    // 高级运算菜单
+    /**
+     * 高级运算菜单
+     * 处理幂、阶乘、π、三角函数、指数、对数等高级运算的输入与校验
+     */
     private void advancedMenu() {
         System.out.println("\n--- 高级运算 ---");
         System.out.println("1. 幂运算 (a^b)");
@@ -150,7 +162,11 @@ public class CalculatorController {
         }
     }
 
-    // 中间的工具方法
+    /**
+     * 读取整数输入（带校验循环）
+     * @param prompt 输入提示文字
+     * @return 用户输入的整数
+     */
     private int getIntInput(String prompt) {
         System.out.print(prompt + ": ");
         while (true) {
@@ -163,6 +179,11 @@ public class CalculatorController {
         }
     }
 
+    /**
+     * 读取浮点数输入（带校验循环）
+     * @param prompt 输入提示文字
+     * @return 用户输入的浮点数
+     */
     private double getDoubleInput(String prompt) {
             System.out.print(prompt + ": ");
             while (true) {

@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * 课程成绩实体类
+ * 包含课程名称与对应的考试成绩
+ */
 public class Course {
 
     private String name;

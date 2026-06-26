@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * 学生成绩管理系统入口
+ * 控制台菜单导航，整合学生管理、成绩管理、排序统计三大模块
+ */
 public class App {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -52,6 +56,7 @@ public class App {
         System.out.println("======================================");
     }
 
+    /** 学生信息管理子菜单循环 */
     private static void studentManagementMenu() {
         while (true) {
             System.out.println("\n--------------------------------------");
@@ -168,6 +173,7 @@ public class App {
         }
     }
 
+    /** 成绩管理子菜单循环 */
     private static void gradeManagementMenu() {
         while (true) {
             System.out.println("\n--------------------------------------");
@@ -253,6 +259,7 @@ public class App {
         }
     }
 
+    /** 成绩排序与统计子菜单循环 */
     private static void sortAndStatisticsMenu() {
         while (true) {
             System.out.println("\n--------------------------------------");
@@ -344,6 +351,11 @@ public class App {
         }
     }
 
+    /**
+     * 读取整数输入（带异常处理循环）
+     * @param prompt 提示文字
+     * @return 用户输入的整数
+     */
     private static int readInt(String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -355,6 +367,11 @@ public class App {
         }
     }
 
+    /**
+     * 读取字符串输入
+     * @param prompt 提示文字
+     * @return 用户输入的字符串（去两端空格）
+     */
     private static String readString(String prompt) {
         System.out.print(prompt);
         return scanner.nextLine().trim();
